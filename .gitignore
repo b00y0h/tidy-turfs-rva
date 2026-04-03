@@ -21,6 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Local env files
+.env
 .env*.local
 
 # Vercel
@@ -34,3 +35,28 @@ next-env.d.ts
 payload.db
 payload.db-journal
 media/
+
+# ── GSD baseline (auto-generated) ──
+.gsd
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+__pycache__/
+*.pyc
+.venv/
+venv/
+target/
+vendor/
+*.log
+coverage/
+.cache/
+tmp/
