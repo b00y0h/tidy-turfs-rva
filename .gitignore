@@ -37,7 +37,8 @@ payload.db-journal
 media/
 
 # ── GSD baseline (auto-generated) ──
-.gsd
+.gsd/
+.form-id
 Thumbs.db
 *.swp
 *.swo
