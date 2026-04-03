@@ -20,6 +20,8 @@
     "@payloadcms/next": "^3.81.0",
     "@payloadcms/plugin-form-builder": "^3.81.0",
     "@payloadcms/richtext-lexical": "^3.81.0",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.37.0",
     "graphql": "^16.13.2",
     "next": "16.2.1",
     "payload": "^3.81.0",
