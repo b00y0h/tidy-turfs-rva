@@ -206,7 +206,7 @@ function ContactForm() {
         <p className="text-green-700 mb-4">
           Thanks for reaching out! I&apos;ll get back to you within 24 hours with a personalized quote.
         </p>
-        <p className="text-green-600 text-sm">📱 For fastest response, feel free to text me directly!</p>
+        <a href="sms:8046789158?body=Hi!%20I%27d%20like%20a%20quote%20for%20lawn%20care%20services." className="text-green-600 text-sm hover:text-green-800 transition-colors inline-block">📱 For fastest response, feel free to text me directly!</a>
       </div>
     )
   }
@@ -554,10 +554,10 @@ export default function ContactPage() {
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <h3 className="text-lg font-bold text-gray-800 mb-4">📱 Prefer to Text?</h3>
                 <p className="text-gray-600 mb-4">Texting is the fastest way to reach me. I usually reply within minutes!</p>
-                <div className="bg-green-50 rounded-lg p-4 text-center">
+                <a href="sms:8046789158?body=Hi!%20I%27d%20like%20a%20quote%20for%20lawn%20care%20services." className="block bg-green-50 hover:bg-green-100 transition-colors rounded-lg p-4 text-center">
                   <p className="text-sm text-green-600 mb-1">Text me anytime:</p>
                   <p className="text-xl font-bold text-green-700">📲 Text for Quote</p>
-                </div>
+                </a>
               </div>
 
               <div className="bg-white rounded-2xl shadow-lg p-6">

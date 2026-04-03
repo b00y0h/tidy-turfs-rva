@@ -196,9 +196,9 @@ export default function Home() {
           >
             Get Your Free Quote Today
           </Link>
-          <p className="mt-6 text-green-200 text-sm">
+          <a href="sms:8046789158?body=Hi!%20I%27d%20like%20a%20quote%20for%20lawn%20care%20services." className="mt-6 text-green-200 text-sm hover:text-white transition-colors inline-block">
             📱 Prefer to text? That works too—fastest way to reach me!
-          </p>
+          </a>
         </div>
       </section>
     </>

@@ -56,9 +56,9 @@ export default function Footer() {
               <p className="flex items-center gap-2">
                 <span>📍</span> Richmond, VA
               </p>
-              <p className="flex items-center gap-2">
+              <a href="sms:8046789158?body=Hi!%20I%27d%20like%20a%20quote%20for%20lawn%20care%20services." className="flex items-center gap-2 hover:text-white transition-colors">
                 <span>📱</span> Text for fastest response
-              </p>
+              </a>
               <p className="flex items-center gap-2">
                 <span>📧</span> <a href="mailto:tidyturfrva@gmail.com">tidyturfrva@gmail.com</a>
               </p>
