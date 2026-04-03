@@ -60,7 +60,7 @@ export default function Footer() {
                 <span>📱</span> Text for fastest response
               </p>
               <p className="flex items-center gap-2">
-                <span>📧</span> clayton@tidyturfsrva.com
+                <span>📧</span> <a href="mailto:tidyturfrva@gmail.com">tidyturfrva@gmail.com</a>
               </p>
             </div>
             <Link 
