@@ -216,6 +216,13 @@ const emails = [
     message: lexicalText('{{*:table}}'),
     replyTo: '{{email}}',
   },
+  {
+    emailTo: 'reversetype@gmail.com',
+    emailFrom: 'Tidy Turfs RVA <bobby@reversetype.com>',
+    subject: 'New Quote Request from {{fullName}}',
+    message: lexicalText('{{*:table}}'),
+    replyTo: '{{email}}',
+  },
 ]
 
 // ── Confirmation message (Lexical) ───────────────────────────────────────────
