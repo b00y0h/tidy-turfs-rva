@@ -152,7 +152,7 @@ export default buildConfig({
   editor: lexicalEditor(),
   email: resendAdapter({
     apiKey: process.env.RESEND_API_KEY || '',
-    defaultFromAddress: 'onboarding@resend.dev',
+    defaultFromAddress: 'bobby@reversetype.com',
     defaultFromName: 'Tidy Turfs RVA',
   }),
   plugins: [

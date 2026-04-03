@@ -21,7 +21,7 @@ async function main() {
     if (existing.totalDocs > 0) {
       await payload.update({
         collection: 'users',
-        id: existing.docs[0].id as number,
+        id: existing.docs[0].id as unknown as number,
         data: { password },
       })
       console.log(`Updated user: ${email}`)

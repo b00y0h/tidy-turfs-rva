@@ -210,8 +210,8 @@ const fields = [
 // ── Email notification ───────────────────────────────────────────────────────
 const emails = [
   {
-    emailTo: '{{email}}',
-    emailFrom: 'Tidy Turfs RVA <onboarding@resend.dev>',
+    emailTo: 'reversetype@gmail.com',
+    emailFrom: 'Tidy Turfs RVA <bobby@reversetype.com>',
     subject: 'New Quote Request from {{fullName}}',
     message: lexicalText('{{*:table}}'),
     replyTo: '{{email}}',
@@ -245,19 +245,22 @@ async function seed() {
 
   let formId: string
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const data = formData as any
+
   if (existing.docs.length > 0) {
     const id = String(existing.docs[0]!.id)
     await payload.update({
       collection: 'forms',
       id,
-      data: formData,
+      data,
     })
     formId = id
     console.log(`[seed:form] Updated existing Contact Form — id: ${formId}`)
   } else {
     const created = await payload.create({
       collection: 'forms',
-      data: formData,
+      data,
     })
     formId = String(created.id)
     console.log(`[seed:form] Created new Contact Form — id: ${formId}`)
