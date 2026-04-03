@@ -210,7 +210,7 @@ const fields = [
 // ── Email notification ───────────────────────────────────────────────────────
 const emails = [
   {
-    emailTo: 'reversetype@gmail.com',
+    emailTo: 'tidyturfrva@gmail.com',
     emailFrom: 'Tidy Turfs RVA <bobby@reversetype.com>',
     subject: 'New Quote Request from {{fullName}}',
     message: lexicalText('{{*:table}}'),
