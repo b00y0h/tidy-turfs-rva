@@ -1,6 +1,8 @@
 import { buildConfig } from 'payload'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
+import { resendAdapter } from '@payloadcms/email-resend'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -148,6 +150,27 @@ export default buildConfig({
     },
   ],
   editor: lexicalEditor(),
+  email: resendAdapter({
+    apiKey: process.env.RESEND_API_KEY || '',
+    defaultFromAddress: 'onboarding@resend.dev',
+    defaultFromName: 'Tidy Turfs RVA',
+  }),
+  plugins: [
+    formBuilderPlugin({
+      fields: {
+        text: true,
+        textarea: true,
+        select: true,
+        email: true,
+        state: false,
+        country: false,
+        checkbox: false,
+        number: false,
+        message: false,
+        payment: false,
+      },
+    }),
+  ],
   secret: process.env.PAYLOAD_SECRET || 'tidyturfs-super-secret-key-change-in-production',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

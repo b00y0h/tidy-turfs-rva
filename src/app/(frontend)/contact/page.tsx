@@ -181,10 +181,14 @@ function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
     try {
-      const res = await fetch('/api/quotes', {
+      const submissionData = Object.entries(formData).map(([field, value]) => ({
+        field,
+        value: Array.isArray(value) ? value.join(', ') : String(value),
+      }))
+      const res = await fetch('/api/form-submissions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ form: process.env.NEXT_PUBLIC_FORM_ID, submissionData }),
       })
       if (res.ok) setIsSubmitted(true)
     } catch (err) {

@@ -6,11 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed:form": "export $(grep -v '^#' .env | xargs) && npx tsx --no-cache src/seed/contactForm.ts",
+    "seed:admin": "export $(grep -v '^#' .env | xargs) && npx tsx --no-cache src/seed/createVerifyAdmin.ts"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "^3.81.0",
+    "@payloadcms/db-mongodb": "^3.80.0",
+    "@payloadcms/email-resend": "^3.80.0",
     "@payloadcms/next": "^3.80.0",
+    "@payloadcms/plugin-form-builder": "^3.80.0",
     "@payloadcms/richtext-lexical": "^3.80.0",
     "graphql": "^16.13.2",
     "next": "16.2.1",
