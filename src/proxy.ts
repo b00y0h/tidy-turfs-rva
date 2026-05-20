@@ -38,7 +38,7 @@ function getIP(request: NextRequest): string {
   )
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const limiters = getLimiters()
   if (!limiters) return NextResponse.next()
 
