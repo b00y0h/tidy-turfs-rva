@@ -30,8 +30,8 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Meet Clayton</h1>
           <p className="text-xl text-green-100">
-            The 16-year-old behind Richmond&apos;s fastest-growing lawn care
-            service.
+            The {claytonAge}-year-old behind one of Richmond&apos;s
+            fastest-growing lawn care service.
           </p>
         </div>
       </section>
@@ -134,8 +134,10 @@ export default function AboutPage() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-brand mb-2">16</div>
-              <div className="text-gray-600">Years old (and hungry)</div>
+              <div className="text-5xl font-bold text-brand mb-2">
+                {claytonAge}
+              </div>
+              <div className="text-gray-600">Years old</div>
             </div>
             <div>
               <div className="text-5xl font-bold text-brand mb-2">100%</div>
