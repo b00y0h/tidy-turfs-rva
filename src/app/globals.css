@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand: #3a7036;
+  --color-brand-hover: #2c5429;
+  --color-brand-dark: #1c3c1c;
+}
+
 :root {
   --green-primary: #16a34a;
   --green-dark: #15803d;
@@ -12,11 +18,29 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
 }
 
-.hero-gradient {
-  background: linear-gradient(135deg, #15803d 0%, #22c55e 50%, #16a34a 100%);
+.hero-bg {
+  position: relative;
+  background-image: url("/grass1.jpg");
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(28 60 28 / 0.6);
+  z-index: -1;
 }
 
 .text-shadow {
@@ -24,8 +48,13 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-float {

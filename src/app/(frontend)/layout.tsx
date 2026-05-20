@@ -1,10 +1,10 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function FrontendLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -13,19 +13,26 @@ export default function FrontendLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
-              name: 'TidyTurfs RVA',
-              description: 'Professional lawn care services in Richmond, Virginia',
-              url: 'https://tidyturfsrva.com',
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "TidyTurf RVA",
+              description:
+                "Professional lawn care services in Richmond, Virginia",
+              url: "https://tidyturfrva.com",
               areaServed: {
-                '@type': 'City',
-                name: 'Richmond',
-                addressRegion: 'VA',
-                addressCountry: 'US',
+                "@type": "City",
+                name: "Richmond",
+                addressRegion: "VA",
+                addressCountry: "US",
               },
-              serviceType: ['Lawn Mowing', 'Landscaping', 'Leaf Removal', 'Mulching', 'Hedge Trimming'],
-              priceRange: '$$',
+              serviceType: [
+                "Lawn Mowing",
+                "Landscaping",
+                "Leaf Removal",
+                "Mulching",
+                "Hedge Trimming",
+              ],
+              priceRange: "$$",
             }),
           }}
         />
@@ -36,5 +43,5 @@ export default function FrontendLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }

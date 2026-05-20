@@ -1,58 +1,58 @@
-import { buildConfig } from 'payload'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
-import { resendAdapter } from '@payloadcms/email-resend'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import { buildConfig } from "payload";
+import { mongooseAdapter } from "@payloadcms/db-mongodb";
+import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
+import { resendAdapter } from "@payloadcms/email-resend";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const filename = fileURLToPath(import.meta.url)
-const dirname = path.dirname(filename)
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
 export default buildConfig({
   admin: {
-    user: 'users',
+    user: "users",
     importMap: {
       baseDir: path.resolve(dirname),
     },
   },
   collections: [
     {
-      slug: 'users',
+      slug: "users",
       auth: true,
       admin: {
-        useAsTitle: 'email',
+        useAsTitle: "email",
       },
       fields: [
         {
-          name: 'name',
-          type: 'text',
+          name: "name",
+          type: "text",
         },
       ],
     },
     {
-      slug: 'testimonials',
+      slug: "testimonials",
       admin: {
-        useAsTitle: 'name',
+        useAsTitle: "name",
       },
       fields: [
         {
-          name: 'name',
-          type: 'text',
+          name: "name",
+          type: "text",
           required: true,
         },
         {
-          name: 'location',
-          type: 'text',
+          name: "location",
+          type: "text",
         },
         {
-          name: 'content',
-          type: 'textarea',
+          name: "content",
+          type: "textarea",
           required: true,
         },
         {
-          name: 'rating',
-          type: 'number',
+          name: "rating",
+          type: "number",
           min: 1,
           max: 5,
           defaultValue: 5,
@@ -60,100 +60,100 @@ export default buildConfig({
       ],
     },
     {
-      slug: 'services',
+      slug: "services",
       admin: {
-        useAsTitle: 'title',
+        useAsTitle: "title",
       },
       fields: [
         {
-          name: 'title',
-          type: 'text',
+          name: "title",
+          type: "text",
           required: true,
         },
         {
-          name: 'description',
-          type: 'textarea',
+          name: "description",
+          type: "textarea",
           required: true,
         },
         {
-          name: 'priceRange',
-          type: 'text',
+          name: "priceRange",
+          type: "text",
         },
         {
-          name: 'icon',
-          type: 'text',
+          name: "icon",
+          type: "text",
         },
         {
-          name: 'order',
-          type: 'number',
+          name: "order",
+          type: "number",
           defaultValue: 0,
         },
       ],
     },
     {
-      slug: 'quotes',
+      slug: "quotes",
       admin: {
-        useAsTitle: 'name',
+        useAsTitle: "name",
       },
       fields: [
         {
-          name: 'name',
-          type: 'text',
+          name: "name",
+          type: "text",
           required: true,
         },
         {
-          name: 'email',
-          type: 'email',
+          name: "email",
+          type: "email",
           required: true,
         },
         {
-          name: 'phone',
-          type: 'text',
+          name: "phone",
+          type: "text",
         },
         {
-          name: 'address',
-          type: 'textarea',
+          name: "address",
+          type: "textarea",
           required: true,
         },
         {
-          name: 'service',
-          type: 'text',
+          name: "service",
+          type: "text",
           required: true,
         },
         {
-          name: 'message',
-          type: 'textarea',
+          name: "message",
+          type: "textarea",
         },
         {
-          name: 'status',
-          type: 'select',
+          name: "status",
+          type: "select",
           options: [
-            { label: 'New', value: 'new' },
-            { label: 'Contacted', value: 'contacted' },
-            { label: 'Quoted', value: 'quoted' },
-            { label: 'Scheduled', value: 'scheduled' },
-            { label: 'Completed', value: 'completed' },
+            { label: "New", value: "new" },
+            { label: "Contacted", value: "contacted" },
+            { label: "Quoted", value: "quoted" },
+            { label: "Scheduled", value: "scheduled" },
+            { label: "Completed", value: "completed" },
           ],
-          defaultValue: 'new',
+          defaultValue: "new",
         },
       ],
     },
     {
-      slug: 'media',
+      slug: "media",
       upload: true,
       fields: [
         {
-          name: 'alt',
-          type: 'text',
+          name: "alt",
+          type: "text",
         },
       ],
     },
   ],
   editor: lexicalEditor(),
   email: resendAdapter({
-    apiKey: process.env.RESEND_API_KEY || '',
-    defaultFromAddress: 'bobby@reversetype.com',
-    defaultFromName: 'Tidy Turfs RVA',
+    apiKey: process.env.RESEND_API_KEY || "",
+    defaultFromAddress: "bobby@reversetype.com",
+    defaultFromName: "Tidy Turfs RVA",
   }),
   plugins: [
     formBuilderPlugin({
@@ -171,11 +171,13 @@ export default buildConfig({
       },
     }),
   ],
-  secret: process.env.PAYLOAD_SECRET || 'tidyturfs-super-secret-key-change-in-production',
+  secret:
+    process.env.PAYLOAD_SECRET ||
+    "tidyturf-super-secret-key-change-in-production",
   typescript: {
-    outputFile: path.resolve(dirname, 'payload-types.ts'),
+    outputFile: path.resolve(dirname, "payload-types.ts"),
   },
   db: mongooseAdapter({
-    url: process.env.DATABASE_URL || '',
+    url: process.env.DATABASE_URL || "",
   }),
-})
+});
