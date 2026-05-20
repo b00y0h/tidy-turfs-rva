@@ -149,7 +149,9 @@ export default function AboutPage() {
             </div>
             <div>
               <div className="text-5xl font-bold text-brand mb-2">💪</div>
-              <div className="text-gray-600">Building something real</div>
+              <div className="text-gray-600">
+                Building a business from the ground up
+              </div>
             </div>
           </div>
         </div>
