@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import { HeroBg } from "@/components/HeroBg";
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -666,6 +667,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="hero-bg text-white py-16">
+        <HeroBg />
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Request a Free Quote

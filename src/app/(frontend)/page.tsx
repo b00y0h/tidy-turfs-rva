@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroBg } from "@/components/HeroBg";
 
 const services = [
   {
@@ -64,6 +65,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="hero-bg text-white py-20 md:py-32">
+        <HeroBg />
         <div className="max-w-6xl mx-auto px-4 text-center">
           <div className=" mb-6 flex justify-center">
             <Image

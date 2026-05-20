@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { HeroBg } from "@/components/HeroBg";
 
 export const metadata: Metadata = {
   title: "About Clayton | TidyTurf RVA",
@@ -25,6 +26,7 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="hero-bg text-white py-16">
+        <HeroBg />
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Meet Clayton</h1>
           <p className="text-xl text-green-100">
