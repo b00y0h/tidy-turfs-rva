@@ -91,7 +91,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-300 text-sm">
+        <div className="border-t border-green-700 mt-8 pt-8 text-center text-white text-sm">
           <p>© {new Date().getFullYear()} TidyTurf RVA. All rights reserved.</p>
           <p>Professionals with a purpose.</p>
         </div>
